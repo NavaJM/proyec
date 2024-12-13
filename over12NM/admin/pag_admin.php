@@ -1,33 +1,25 @@
 <?php
-//validamos datos del servidor
+
 $user = "root";
 $pass = "";
 $host = "localhost";
 
-//conectamos la base datos
+
 $connection = mysqli_connect($host,$user,$pass);
 
-//hacemos llamado al imput de formuario
-$nombre = $_POST["nombre"] ;
-$correo = $_POST["correo"] ;
-$contraseña = $_POST["contraseña"] ;
-$roll=$_POST["roll"];
 
-//indicamos el nombre de la base datos
+
         $datab = "over12";
-        //indicamos selecionar ala base datos
+       
         $db = mysqli_select_db($connection,$datab);
 
- //insertamos datos de registro al mysql xamp, indicando nombre de la tabla y sus atributos
-        
-$instruccion_SQL = "INSERT INTO login (nombre, correo, contrasena,roll)
-                             VALUES ('$nombre','$correo','$contraseña','$roll')";
-                           
-                           
-        $resultado = mysqli_query($connection,$instruccion_SQL);
         
 
-         //se realiza la consulta en mysql xampp indicanco nombre de la tabla
+                           
+                           
+       
+
+       
          $consulta = "SELECT * FROM login";
         
          $result = mysqli_query($connection,$consulta);
@@ -60,6 +52,6 @@ $instruccion_SQL = "INSERT INTO login (nombre, correo, contrasena,roll)
          mysqli_close( $connection );
          
             //echo "Fuera " ;
-            echo'<a href="../over12NM/usuario/html/clientes.html">Inicio</a>';
+            echo'<a href="/over12NM/usuario/html/clientes.html">volver</a>';
          
          ?> 
